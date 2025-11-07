@@ -30,6 +30,7 @@ app.add_middleware(
 # ---- Parse Resume ----
 @app.post("/parse-resume", response_model=ResumeParseOut)
 async def api_parse_resume(file: UploadFile = File(...)):
+    print(f"Received file: {file.filename}")
     return parse_resume(file)
 
 

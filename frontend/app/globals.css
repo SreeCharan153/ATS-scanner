@@ -5,6 +5,29 @@
   --foreground: #171717;
 }
 
+/* Make placeholders visible */
+::placeholder {
+  @apply text-slate-500; /* darker gray */
+  opacity: 1;            /* stop browsers from fading it */
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  ::placeholder {
+    @apply text-slate-300;
+  }
+}
+
+.form-input {
+  @apply w-full px-4 py-2
+    border border-slate-400       /* darker visible border */
+    rounded-lg
+    text-slate-900
+    placeholder-slate-500
+    focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+    bg-white;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
